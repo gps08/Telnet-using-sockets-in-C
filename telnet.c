@@ -97,7 +97,7 @@ int main(int argc,char* argv[])
 		{
 			int c=0; scanf("%c",&buff[c]);
 			while(buff[c]!='\n') scanf("%c",&buff[++c]);
-			buff[++c]='\r'; // to complete escape character
+			buff[c]='\r'; buff[++c]='\n'; // to complete escape sequence
 
 			if(write(skt,buff,c+1)<0) printf("write error\n"),exit(1);
 		}
